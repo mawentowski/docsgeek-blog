@@ -58,8 +58,13 @@ module.exports = {
     },
     fontFamily: {
       mono: ["IBM Plex Mono", "monospace"],
+      // headings: ["Open Sans Variable", "sans-serif"],
+      // body: ["Source Sans Pro", "sans-serif"]
     },
     // },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require('tailwindcss/nesting'),
+    require('@tailwindcss/typography')
+  ]
 };
