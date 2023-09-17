@@ -1,12 +1,12 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://astro-paper.pages.dev/",
-  author: "Sat Naing",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "DocsGeek Blog",
-  ogImage: "astropaper-og.jpg",
-  lightAndDarkMode: true,
+  website: "https://docsgeek.io/blog",
+  author: "Mark Wentowski",
+  desc: "Blog about modern technical writing topics, such as docs-as-code, documentation automation, API documentation, and technical writing standards and best practices.",
+  title: "Docs Geek Blog",
+  ogImage: "apitechwriting_og.png",
+  lightAndDarkMode: false,
   postPerPage: 3,
 };
 
