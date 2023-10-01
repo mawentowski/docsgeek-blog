@@ -6,16 +6,6 @@
   font-family: "OpenSans_700_Reg";
   src: url("fonts/open-sans-latin-ext-700-normal.ttf") format("truetype");
 }
-@font-face {
-  font-family: "UTMTimes_Bold";
-  src: url("fonts/utmtimesbold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "mytupi_Bold"; /* Choose a suitable name for your font */
-  src: url("fonts/mytupibold.ttf") format("truetype");
-  /* You can also specify other formats like woff, woff2, eot if needed */
-}
 
 @font-face {
   font-family: "SourceSansPro_400_Reg"; /* Choose a suitable name for your font */
