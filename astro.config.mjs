@@ -8,6 +8,10 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://docsgeek.io/blog/", // replace this with your deployed domain
+  base: "/blog",
+  // build: {
+  //   assets: "blog/assets",
+  // },
   integrations: [
     tailwind({
       config: {
