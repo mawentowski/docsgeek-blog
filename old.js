@@ -1,10 +1,8 @@
-// Need to set root of live server to dist folder in settings.json
-// "liveServer.settings.root": "/dist"
-// 
 const fs = require('fs');
 const path = require('path');
 const regexReplacements = [
-  { pattern: /="\/+/g, replacement: '="' },
+  { pattern: /href="\/+/g, replacement: 'href="' },
+  { pattern: /src="\/+/g, replacement: 'src="' },
 ];
 
 function getRelativePath(level) {
@@ -13,9 +11,10 @@ function getRelativePath(level) {
 
 function performRegexReplacements(filePath, level) {
   let content = fs.readFileSync(filePath, 'utf8');
-  if (level > 0) {
+  if (level > 1) {
     const relativePath = getRelativePath(level);
-    content = content.replace(/="\/+/g, `="${relativePath}`);
+    content = content.replace(/href="\/+/g, `href="${relativePath}`);
+    content = content.replace(/src="\/+/g, `src="${relativePath}`);
   }
   regexReplacements.forEach(replacement => {
     content = content.replace(replacement.pattern, replacement.replacement);
@@ -41,5 +40,3 @@ function processDirectory(directoryPath, level) {
 
 const rootDirectory = path.join(__dirname, 'dist');
 processDirectory(rootDirectory, 1);
-
-console.log("Regex operation on dist completed")

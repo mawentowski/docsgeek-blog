@@ -1,17 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+3&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-  font-family: "OpenSans_700_Reg";
-  src: url("fonts/open-sans-latin-ext-700-normal.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "SourceSansPro_400_Reg"; /* Choose a suitable name for your font */
-  src: url("fonts/source-sans-pro-latin-400-normal.ttf") format("truetype");
-  /* You can also specify other formats like woff, woff2, eot if needed */
-}
 
 @layer base {
   /* :root, */
@@ -22,15 +13,9 @@
   h3,
   h4,
   h5,
+  p,
   ul#menu-items li a {
-    /* font-family: "times new roman", serif !important; */
-    font-family: "OpenSans_700_Reg", sans-serif !important;
-    /* font-family: "UTMTimes_Bold" !important; */
-    /* font-family: "times new roman", serif !important; */
-  }
-
-  p {
-    font-family: "SourceSansPro_400_Reg", sans-serif;
+    font-family: "Source Sans 3", sans-serif;
   }
   pre {
     background-color: rgb(0, 42, 66) !important;
