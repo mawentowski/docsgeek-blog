@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="en"><head><style>:where(img){height:auto}</style>
+    <meta charset="UTF-8">
+    <meta content="width=device-width" name="viewport">
+    <link href="../../favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="https://docsgeek.io/posts/essential-api-tech-writer-skills/" rel="canonical">
+    <meta content="Astro v2.6.6" name="generator">
+
+    <!-- General Meta Tags -->
+    <title>Essential API technical writing skills</title>
+    <meta content="Essential API technical writing skills" name="title">
+    <meta content="Many transitioning technical writers wonder if coding is necessary for API tech writing. While the extent of coding knowledge varies by role, this article explores essential skills, from API fundamentals to technical proficiency and tools." name="description">
+    <meta content="Mark Wentowski" name="author">
+    <link href="../../sitemap-index.xml" rel="sitemap">
+
+    <!-- Open Graph / Facebook -->
+    <meta content="Essential API technical writing skills" property="og:title">
+    <meta content="Many transitioning technical writers wonder if coding is necessary for API tech writing. While the extent of coding knowledge varies by role, this article explores essential skills, from API fundamentals to technical proficiency and tools." property="og:description">
+    <meta content="https://docsgeek.io/posts/essential-api-tech-writer-skills/" property="og:url">
+    <meta content="https://docsgeek.io/apitechwriting_og.png" property="og:image">
+
+    <!-- Twitter -->
+    <meta content="summary_large_image" property="twitter:card">
+    <meta content="https://docsgeek.io/posts/essential-api-tech-writer-skills/" property="twitter:url">
+    <meta content="Essential API technical writing skills" property="twitter:title">
+    <meta content="Many transitioning technical writers wonder if coding is necessary for API tech writing. While the extent of coding knowledge varies by role, this article explores essential skills, from API fundamentals to technical proficiency and tools." property="twitter:description">
+    <meta content="https://docsgeek.io/apitechwriting_og.png" property="twitter:image">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+
+    
+
+    <script src="../../toggle-theme.js"></script>
+  <link href="../../_astro/_slug_.75baab38.css" rel="stylesheet">
+<link href="../../_astro/_slug_.8b451cf0.css" rel="stylesheet">
+<link href="../../_astro/_slug_.41a32359.css" rel="stylesheet">
+<link href="../../_astro/_slug_.3b14054e.css" rel="stylesheet">
+<link href="../../_astro/_slug_.906d67ca.css" rel="stylesheet"><script type="module">const e=document.querySelector(".hamburger-menu"),n=document.querySelector(".menu-icon"),u=document.querySelector("#menu-items");e?.addEventListener("click",()=>{let t="true"===e.getAttribute("aria-expanded");n?.classList.toggle("is-active"),e.setAttribute("aria-expanded",t?"false":"true"),e.setAttribute("aria-label",t?"Open Menu":"Close Menu"),u?.classList.toggle("display-none")});</script></head>
+  <body>
+    
+  <header class="astro-3EF6KSR2">
+  <a href="#main-content" class="astro-3EF6KSR2" id="skip-to-content">Skip to content</a>
+  <div class="astro-3EF6KSR2 nav-container">
+    <div class="astro-3EF6KSR2 top-nav-wrap">
+      <a href="../../" class="astro-3EF6KSR2 logo">
+        <img alt="AstroPaper Logo" class="astro-3EF6KSR2" decoding="async" fetchpriority="high" height="46" src="../../assets/logo.svg.svg" width="216">
+      </a>
+      <nav class="astro-3EF6KSR2" id="nav-menu">
+        <button class="astro-3EF6KSR2 focus-outline hamburger-menu" aria-controls="menu-items" aria-expanded="false" aria-label="Open Menu">
+          <svg class="astro-3EF6KSR2 menu-icon" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" fill="none" height="24" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+            <line x1="7" x2="21" y1="12" y2="12" class="astro-3EF6KSR2 line"></line>
+            <line x1="3" x2="21" y1="6" y2="6" class="astro-3EF6KSR2 line"></line>
+            <line x1="12" x2="21" y1="18" y2="18" class="astro-3EF6KSR2 line"></line>
+            <line x1="18" x2="6" y1="6" y2="18" class="astro-3EF6KSR2 close"></line>
+            <line x1="6" x2="18" y1="6" y2="18" class="astro-3EF6KSR2 close"></line>
+          </svg>
+        </button>
+        <ul class="astro-3EF6KSR2 display-none sm:flex" id="menu-items">
+          <li class="astro-3EF6KSR2">
+            <a href="../../posts" class="astro-3EF6KSR2">
+              Blog
+            </a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            <a href="../../tags" class="astro-3EF6KSR2">
+              Tags
+            </a>
+          </li>
+          <!-- <li>
+            <a href="../../about" class={activeNav === "about" ? "active" : ""}>
+              About
+            </a>
+          </li> -->
+          <li class="astro-3EF6KSR2">
+            <a href="../../search" class="astro-3EF6KSR2 focus-outline astro-5EUNQZKT group inline-block p-3 sm:p-1" tabindex="0" title="Search" aria-label="search">
+  
+              <svg class="astro-3EF6KSR2 scale-125 sm:scale-100" xmlns="http://www.w3.org/2000/svg"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" class="astro-3EF6KSR2"></path>
+              </svg>
+            
+</a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="max-w-3xl mx-auto px-4">
+  <hr aria-hidden="true" class="border-skin-line">
+</div>
+</header>
+  <div class="astro-VJ4TPSPI flex justify-start max-w-3xl mx-auto px-2 w-full">
+    <button class="astro-VJ4TPSPI flex focus-outline hover:opacity-75 mb-2 mt-8" onclick="history.back()">
+      <svg class="astro-VJ4TPSPI" xmlns="http://www.w3.org/2000/svg"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-VJ4TPSPI"></path>
+      </svg><span class="astro-VJ4TPSPI">Go back</span>
+    </button>
+  </div>
+  <main class="astro-VJ4TPSPI" id="main-content">
+    <h1 class="astro-VJ4TPSPI post-title">Essential API technical writing skills</h1>
+    <div class="astro-VJ4TPSPI flex items-center my-2 opacity-80 space-x-2"><svg class="inline-block fill-skin-base h-6 scale-100 w-6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-base">September 17, 2023<span aria-hidden="true"> | </span><span class="sr-only">&nbsp;at&nbsp;</span>10:33 PM</span></div>
+    <article class="astro-VJ4TPSPI max-w-3xl mx-auto mt-8 prose" id="article" role="article">
+      <p>One common question for technical writers transitioning from UI writing to API documentation is, do I need to be a coder to land an API tech writing job? In general, API technical writing depends on a higher level of technical proficiency on the writer’s part than writing for user interfaces. While the degree of programming knowledge depends on the role, there are skills and tools common across gigs that can guide what you need to learn to be successful at API tech writing.</p>
+<p>This article explores the essential skills required for success in this role, breaking it down into API fundamentals and then exploring the various technical skills and tools.</p>
+<h2 id="table-of-contents">Table of contents</h2>
+<p></p><details><summary>Open Table of contents</summary><p></p>
+<ul>
+<li>
+<p><a href="#grasp-api-fundamentals">Grasp API fundamentals</a></p>
+<ul>
+<li><a href="#understand-http-methodscodes">Understand HTTP methods/codes</a></li>
+<li><a href="#learn-about-authentication-and-authorization">Learn about authentication and authorization</a></li>
+<li><a href="#be-fluent-in-the-open-api-spec">Be fluent in the Open API spec</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#adopt-the-docs-as-code-approach">Adopt the ‘Docs as Code’ approach</a></p>
+<ul>
+<li><a href="#switch-to-markdown">Switch to Markdown</a></li>
+<li><a href="#author-content-in-text-editors">Author content in text editors</a></li>
+<li><a href="#get-comfy-with-cli-commands">Get comfy with CLI commands</a></li>
+<li><a href="#experiment-with-static-site-generators">Experiment with static site generators</a></li>
+<li><a href="#leverage-ai-to-write-drafts">Leverage AI to write drafts</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#collaboration-and-version-control">Collaboration and version control</a></p>
+</li>
+<li>
+<p><a href="#learn-a-programming-language">Learn a programming language</a></p>
+</li>
+<li>
+<p><a href="#api-testing">API Testing</a></p>
+<ul>
+<li><a href="#organize-api-requests-with-postman">Organize API requests with Postman</a></li>
+<li><a href="#practice-validating-api-behavior">Practice validating API behavior</a></li>
+<li><a href="#create-sample-apps-to-visualize-api-responses">Create sample apps to visualize API responses</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#extra-credit">Extra credit</a></p>
+<ul>
+<li><a href="#specialize-in-a-domain">Specialize in a domain</a></li>
+<li><a href="#get-community-support">Get community support</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#in-conclusion">In conclusion</a></p>
+</li>
+</ul>
+<p></p></details><p></p>
+<h2 id="grasp-api-fundamentals">Grasp API fundamentals</h2>
+<p>At the core of API technical writing is a deep understanding of <a href="https://document360.com/blog/what-is-rest-api/">what APIs are</a> and their role in modern software development.</p>
+<h3 id="understand-http-methodscodes">Understand HTTP methods/codes</h3>
+<p>Familiarize yourself with HTTP methods (GET, POST, PUT, DELETE) and HTTP status codes (e.g., 200 OK, 404 Not Found). This knowledge forms the foundation for describing API endpoints and documenting API responses and errors.</p>
+<h3 id="learn-about-authentication-and-authorization">Learn about authentication and authorization</h3>
+<p>Knowing how authentication and authorization mechanisms work, such as OAuth, API keys, and tokens, is crucial for writing the Getting Started sections to guide developers through retrieving an API key, using the API key to authenticate requests, and making their first API call.</p>
+<h3 id="be-fluent-in-the-open-api-spec">Be fluent in the Open API spec</h3>
+<p>A Swagger document is generated based on an API’s OpenAPI specification, encoded as JSON/YAML, that describes an API’s endpoints, HTTP methods, parameters, and schemas. It is a standardized format for documenting and describing RESTful APIs that API documentation tools use to generate API reference documentation (i.e., a Swagger-like web page).</p>
+<p>One way to familiarize yourself with the spec’s YAML/JSON structure is to practice editing field descriptions in the <a href="https://editor.swagger.io/">Swagger editor</a>, which allows you to make edits to the Swagger Petstore specification and view the generated documentation.</p>
+<p>In the future, if you are participating in <a href="https://document360.com/blog/api-first-approach/">spec-first</a> development, you may be asked to create the OpenAPI specification, collaborating with developers to define the API’s structure, which requires an in-depth knowledge of OpenAPI’s YAML/JSON format.</p>
+<h2 id="adopt-the-docs-as-code-approach">Adopt the ‘Docs as Code’ approach</h2>
+<p>Many API developers adopt the <a href="https://www.writethedocs.org/guide/docs-as-code/">Docs as Code</a> approach to authoring content and collaborating with team members. It’s a methodology and approach to documentation that treats documentation like software developers treat their code.</p>
+<h3 id="switch-to-markdown">Switch to Markdown</h3>
+<p>Instead of using proprietary or binary formats, Docs as Code promotes using plain text formats, most commonly Markdown. These formats are lightweight, human-readable, and easily understood by technical writers and developers.</p>
+<p>Markdown is a simple markup language to learn. See the <a href="https://www.markdownguide.org/basic-syntax/">Markdown official docs</a> for more details.</p>
+<h3 id="author-content-in-text-editors">Author content in text editors</h3>
+<p>Docs as Code works best using text editors over help authoring tools (HATs) or knowledge base software because they are lightweight, integrate with Git, offer linting, and, most importantly, are tools developers use.</p>
+<p>While various text editors are available, one of the most popular choices among developers and technical writers is <a href="https://code.visualstudio.com/">Visual Studio Code</a>.</p>
+<h3 id="get-comfy-with-cli-commands">Get comfy with CLI commands</h3>
+<p>CLI stands for command-line interface and provides a way of interacting with your local machine’s file system using commands rather than navigating folders. For Mac, that means using an app like Terminal, or for Windows, the Command Prompt.</p>
+<p>It’s essential to learn basic commands, such as navigating the file system, working with files and directories, managing permissions, and installing packages to set up and configure documentation sites, sample apps, databases, and libraries accompanying an API.</p>
+<p>In addition, you’ll want to learn how to generate an SSH key pair and use an SSH agent to provide your private keys to SSH clients. SSH is the preferred way of connecting to code bases, such as those on GitHub, and is especially important for securely connecting to private code bases and servers.</p>
+<h3 id="experiment-with-static-site-generators">Experiment with static site generators</h3>
+<p>Static site generators (SSGs) generate static HTML files from source files, often written in markup languages like Markdown, templates, and configuration files. These static HTML files can be deployed to web servers, content delivery networks (CDNs), or hosting platforms, making it easy to publish and maintain websites, including documentation.</p>
+<p>While configuring these sites from the ground up is usually a developer task, you’ll need to know how to configure projects (usually using YAML config files) and style the output using CSS.</p>
+<p>Popular static site generators include <a href="https://jekyllrb.com/">Jekyll</a>, <a href="https://gohugo.io/">Hugo</a>, and <a href="https://astro.build/">Astro</a>.</p>
+<h3 id="leverage-ai-to-write-drafts">Leverage AI to write drafts</h3>
+<p>Natural language processors (NLPs) like <a href="https://chat.openai.com/">ChatGPT</a> can help you structure your documentation and create first drafts of content. They can also assist in translating complex technical jargon into plain language.</p>
+<h2 id="collaboration-and-version-control">Collaboration and version control</h2>
+<p>Using the version control system, Git allows tech writers to collaborate with developers on projects, track changes, and manage versions of a codebase or any text-based content.</p>
+<p>You’ll need to know how to clone repositories, commit/push changes, and make pull requests to collaborate with developers.</p>
+<p>While using tools visual tools like Sourcetree is convenient, learning the Git CLI commands helps you understand Git fundamentals better. It gives you experience using the CLI, which benefits other areas.</p>
+<p>A great resource to learn about the different ways to use Git is LinkORB’s article <a href="https://engineering.linkorb.com/topics/git/articles/git-workflow/">Learn about Git standards and processes</a>.</p>
+<p>Git hosting platforms like <a href="https://github.com/">GitHub</a> are preferred over traditional content management systems (CMSs) because they provide version tracking, facilitate collaboration and interact with existing developer tooling and workflows.</p>
+<h2 id="learn-a-programming-language">Learn a programming language</h2>
+<p>Job postings for API technical writers often say, ‘familiarity with at least one programming language required.’ ‘Familiarity’ is the keyword and implies ‘working knowledge’ of a programming language and general programming concepts — not being an ‘expert’ developer.</p>
+<p>JavaScript is beneficial to learn since you can quickly build user interfaces that visualize API data. Python is another good choice because it is a simple and helpful language.</p>
+<p>Since you’ll likely need to read code samples in more than one language, knowing the foundations of programming languages, such as functions/methods, data types, variables, operations, loops, and functions/methods, is helpful.</p>
+<h2 id="api-testing">API Testing</h2>
+<p>API testing tools allow tech writers to interact with and test APIs hands-on like a developer and are essential to creating accurate documentation.</p>
+<h3 id="organize-api-requests-with-postman">Organize API requests with Postman</h3>
+<p><a href="https://www.postman.com/">Postman</a> is a popular tool for testing APIs. A tech writer’s common task is organizing API calls, grouping them effectively, and providing clear descriptions. It starts by importing an Open API specification and grouping related requests into collections. Collections are like folders for organizing requests based on functionality or use cases and help you keep requests structured and easy to find.</p>
+<p>Check out <a href="https://learning.postman.com/docs/introduction/overview/">Postman’s docs</a> for tips and best practices.</p>
+<h3 id="practice-validating-api-behavior">Practice validating API behavior</h3>
+<p>You can use API testing tools like Postman to make API requests, inspect responses, and troubleshoot issues. However, the ability to use browser developer tools and browser consoles for testing APIs directly in a web browser is a valuable skill since it allows you to take the role of the developer creating an app that utilizes the API.</p>
+<p>The following is a simple example of a JavaScript web app.</p>
+<ul>
+<li><strong>Making API Requests</strong>: You can use JavaScript in the browser console to make API requests and examine the responses, helping you quickly verify that the API is functioning as expected.</li>
+</ul>
+<pre class="astro-code one-dark-pro" is:raw="" style="white-space:pre-wrap;word-wrap:break-word;background-color:#282c34;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#61afef">fetch</span><span style="color:#abb2bf">(</span><span style="color:#98c379">"https://api.example.com/user/123"</span><span style="color:#abb2bf">)</span></span>
+<span class="line"><span style="color:#abb2bf">  .</span><span style="color:#61afef">then</span><span style="color:#abb2bf">(</span><span style="color:#e06c75;font-style:italic">response</span><span style="color:#abb2bf"> </span><span style="color:#c678dd">=&gt;</span><span style="color:#abb2bf"> </span><span style="color:#e5c07b">response</span><span style="color:#abb2bf">.</span><span style="color:#61afef">json</span><span style="color:#abb2bf">())</span></span>
+<span class="line"><span style="color:#abb2bf">  .</span><span style="color:#61afef">then</span><span style="color:#abb2bf">(</span><span style="color:#e06c75;font-style:italic">data</span><span style="color:#abb2bf"> </span><span style="color:#c678dd">=&gt;</span><span style="color:#abb2bf"> </span><span style="color:#e5c07b">console</span><span style="color:#abb2bf">.</span><span style="color:#61afef">log</span><span style="color:#abb2bf">(</span><span style="color:#e06c75">data</span><span style="color:#abb2bf">));</span></span></code></pre>
+<ul>
+<li><strong>Debugging and Troubleshooting</strong>: Browser consoles provide debugging tools that help you identify and resolve issues with API requests, such as incorrect parameters or unexpected responses.</li>
+</ul>
+<h3 id="create-sample-apps-to-visualize-api-responses">Create sample apps to visualize API responses</h3>
+<p>You can create simple web pages that can display API responses in a structured and user-friendly manner. Knowing HTML is beneficial when you need to demonstrate how API data is structured or provide examples of using the API. For example, create a simple web app that fetches data from a REST API and dynamically displays that data on the web page:</p>
+<pre class="astro-code one-dark-pro" is:raw="" style="white-space:pre-wrap;word-wrap:break-word;background-color:#282c34;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#abb2bf">&lt;</span><span style="color:#e06c75">div</span><span style="color:#abb2bf">&gt;</span></span>
+<span class="line"><span style="color:#abb2bf">  &lt;</span><span style="color:#e06c75">h1</span><span style="color:#abb2bf">&gt;User Profile&lt;/</span><span style="color:#e06c75">h1</span><span style="color:#abb2bf">&gt;</span></span>
+<span class="line"><span style="color:#abb2bf">  &lt;</span><span style="color:#e06c75">p</span><span style="color:#abb2bf">&gt;Name: {{ username }}&lt;/</span><span style="color:#e06c75">p</span><span style="color:#abb2bf">&gt;</span></span>
+<span class="line"><span style="color:#abb2bf">  &lt;</span><span style="color:#e06c75">p</span><span style="color:#abb2bf">&gt;Email: {{ email }}&lt;/</span><span style="color:#e06c75">p</span><span style="color:#abb2bf">&gt;</span></span>
+<span class="line"><span style="color:#abb2bf">&lt;/</span><span style="color:#e06c75">div</span><span style="color:#abb2bf">&gt;</span></span></code></pre>
+<h2 id="extra-credit">Extra credit</h2>
+<h3 id="specialize-in-a-domain">Specialize in a domain</h3>
+<p>In many cases, domain knowledge can be a significant advantage in API technical writing. Expertise in the industry or technology domain you’re documenting can lead to more accurate and user-friendly documentation. The API domain includes the underlying business processes that govern the API and is vital to understanding and guiding the user journey.</p>
+<p>For example, if you’re documenting mobile development APIs, having experience in mobile app development can significantly enhance the quality of your documentation. Or, for a payment processing API, understanding how online payments work will help you write tutorials and create diagrams.</p>
+<p>Furthermore, as an API tech writer, you may need to backfill empty OpenAPI spec definitions, which requires domain knowledge.</p>
+<p>If you need domain knowledge, don’t worry. You can acquire it over time by engaging in online communities, attending industry events, and learning from subject matter experts.</p>
+<h3 id="get-community-support">Get community support</h3>
+<p>The <a href="https://www.writethedocs.org/slack/">Write The Docs slack channel</a> is a great way to post questions, share ideas, network with fellow technical writers, and discover job opportunities.</p>
+<h2 id="in-conclusion">In conclusion</h2>
+<p>Transitioning from UI technical writing to API technical writing may seem challenging. However, by embracing the tools and processes used by API technical writers, you can build the skills necessary for success in this dynamic field.</p>
+<p>Remember that the key to thriving in this role is continuous improvement. Stay curious, adapt to the ever-evolving API technology landscape, and embrace your vital role as a bridge between developers and end-users.</p>
+    </article>
+
+    <ul class="astro-VJ4TPSPI tags-container">
+      <li class="astro-BLWJYJPT inline-block my-1 underline-offset-4">
+  <a href="../../tags/docs-as-code" class="astro-BLWJYJPT group pr-2 text-sm">
+    <svg class="astro-BLWJYJPT scale-75" xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
+    </svg>
+    &nbsp;<span class="astro-BLWJYJPT">docs-as-code</span>
+  </a>
+</li><li class="astro-BLWJYJPT inline-block my-1 underline-offset-4">
+  <a href="../../tags/apidocumentation" class="astro-BLWJYJPT group pr-2 text-sm">
+    <svg class="astro-BLWJYJPT scale-75" xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
+    </svg>
+    &nbsp;<span class="astro-BLWJYJPT">apidocumentation</span>
+  </a>
+</li>
+    </ul>
+  </main>
+  <footer class="astro-SZ7XMLTE mt-auto">
+  <div class="max-w-3xl mx-auto px-0">
+  <hr aria-hidden="true" class="border-skin-line">
+</div>
+  <div class="astro-SZ7XMLTE footer-wrapper">
+    <div class="astro-UPU6FZXR flex social-icons">
+  <a href="https://github.com/mawentowski" class="inline-block astro-5EUNQZKT group astro-UPU6FZXR link-button" tabindex="0" title=" Docs Geek Blog on Github">
+  
+        <svg class="icon-tabler" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+    <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+  </svg>
+      
+</a><a href="https://www.linkedin.com/in/markwentowski/" class="inline-block astro-5EUNQZKT group astro-UPU6FZXR link-button" tabindex="0" title="Docs Geek Blog on LinkedIn">
+  
+        <svg class="icon-tabler" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+    <rect height="16" rx="2" width="16" x="4" y="4"></rect>
+    <line x1="8" x2="8" y1="11" y2="16"></line>
+    <line x1="8" x2="8" y1="8" y2="8.01"></line>
+    <line x1="12" x2="12" y1="16" y2="11"></line>
+    <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+  </svg>
+      
+</a><a href="https://twitter.com/DocsGeek" class="inline-block astro-5EUNQZKT group astro-UPU6FZXR link-button" tabindex="0" title="Docs Geek Blog on Twitter">
+  
+        <svg class="icon-tabler" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+      <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path>
+    </svg>
+      
+</a>
+</div>
+    <div class="astro-SZ7XMLTE copyright-wrapper">
+      <span class="astro-SZ7XMLTE">Copyright © 2023</span>
+      <span class="astro-SZ7XMLTE separator">&nbsp;|&nbsp;</span>
+      <span class="astro-SZ7XMLTE">All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  </body></html>
