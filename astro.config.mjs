@@ -9,9 +9,9 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://docsgeek.io/blog/", // replace this with your deployed domain
   base: "/blog",
-  // build: {
-  //   assets: "blog/assets",
-  // },
+  build: {
+    format: "file",
+  },
   integrations: [
     tailwind({
       config: {

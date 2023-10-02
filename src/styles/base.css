@@ -14,7 +14,8 @@
   h4,
   h5,
   p,
-  ul#menu-items li a {
+  ul#menu-items li a,
+  ul li {
     font-family: "Source Sans 3", sans-serif;
   }
   pre {
