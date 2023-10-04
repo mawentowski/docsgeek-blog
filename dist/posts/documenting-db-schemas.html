@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="en"><head><style>:where(img){height:auto}</style>
+    <meta charset="UTF-8">
+    <meta content="width=device-width" name="viewport">
+    <link href="/blog/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="https://docsgeek.io/blog/posts/documenting-db-schemas.html" rel="canonical">
+    <meta content="Astro v2.6.6" name="generator">
+
+    <!-- General Meta Tags -->
+    <title>Documenting database schemas</title>
+    <meta content="Documenting database schemas" name="title">
+    <meta content="Documenting database schemas can pose challenges, particularly for tech writers without direct database access. This article offers best practices and strategies to document database schemas effectively." name="description">
+    <meta content="Mark Wentowski" name="author">
+    <link href="/blog/sitemap-index.xml" rel="sitemap">
+
+    <!-- Open Graph / Facebook -->
+    <meta content="Documenting database schemas" property="og:title">
+    <meta content="Documenting database schemas can pose challenges, particularly for tech writers without direct database access. This article offers best practices and strategies to document database schemas effectively." property="og:description">
+    <meta content="https://docsgeek.io/blog/posts/documenting-db-schemas.html" property="og:url">
+    <meta content="https://docsgeek.io/apitechwriting_og.png" property="og:image">
+
+    <!-- Twitter -->
+    <meta content="summary_large_image" property="twitter:card">
+    <meta content="https://docsgeek.io/blog/posts/documenting-db-schemas.html" property="twitter:url">
+    <meta content="Documenting database schemas" property="twitter:title">
+    <meta content="Documenting database schemas can pose challenges, particularly for tech writers without direct database access. This article offers best practices and strategies to document database schemas effectively." property="twitter:description">
+    <meta content="https://docsgeek.io/apitechwriting_og.png" property="twitter:image">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+
+    
+
+    <script src="/blog/toggle-theme.js"></script>
+  <link href="/blog/_astro/_slug_.3c1f2a2c.css" rel="stylesheet">
+<link href="/blog/_astro/_slug_.8b451cf0.css" rel="stylesheet">
+<link href="/blog/_astro/_slug_.41a32359.css" rel="stylesheet">
+<link href="/blog/_astro/_slug_.3b14054e.css" rel="stylesheet">
+<link href="/blog/_astro/_slug_.906d67ca.css" rel="stylesheet"><script type="module">const e=document.querySelector(".hamburger-menu"),n=document.querySelector(".menu-icon"),u=document.querySelector("#menu-items");e?.addEventListener("click",()=>{let t="true"===e.getAttribute("aria-expanded");n?.classList.toggle("is-active"),e.setAttribute("aria-expanded",t?"false":"true"),e.setAttribute("aria-label",t?"Open Menu":"Close Menu"),u?.classList.toggle("display-none")});</script></head>
+  <body>
+    
+  <header class="astro-3EF6KSR2">
+  <a href="#main-content" class="astro-3EF6KSR2" id="skip-to-content">Skip to content</a>
+  <div class="astro-3EF6KSR2 nav-container">
+    <div class="astro-3EF6KSR2 top-nav-wrap">
+      <a href="/blog/" class="astro-3EF6KSR2 logo">
+        <img alt="AstroPaper Logo" class="astro-3EF6KSR2" decoding="async" fetchpriority="high" height="46" src="/blog/assets/logo.svg" width="216">
+      </a>
+      <nav class="astro-3EF6KSR2" id="nav-menu">
+        <button class="astro-3EF6KSR2 focus-outline hamburger-menu" aria-controls="menu-items" aria-expanded="false" aria-label="Open Menu">
+          <svg class="astro-3EF6KSR2 menu-icon" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" fill="none" height="24" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+            <line x1="7" x2="21" y1="12" y2="12" class="astro-3EF6KSR2 line"></line>
+            <line x1="3" x2="21" y1="6" y2="6" class="astro-3EF6KSR2 line"></line>
+            <line x1="12" x2="21" y1="18" y2="18" class="astro-3EF6KSR2 line"></line>
+            <line x1="18" x2="6" y1="6" y2="18" class="astro-3EF6KSR2 close"></line>
+            <line x1="6" x2="18" y1="6" y2="18" class="astro-3EF6KSR2 close"></line>
+          </svg>
+        </button>
+        <ul class="astro-3EF6KSR2 display-none sm:flex" id="menu-items">
+          <li class="astro-3EF6KSR2">
+            <a href="/blog/posts.html" class="astro-3EF6KSR2">
+              Blog
+            </a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            <a href="/blog/tags.html" class="astro-3EF6KSR2">
+              Tags
+            </a>
+          </li>
+          <!-- <li>
+            <a href="/blog/about.html" class={activeNav === "about" ? "active" : ""}>
+              About
+            </a>
+          </li> -->
+          <li class="astro-3EF6KSR2">
+            <a href="/blog/search.html" class="astro-3EF6KSR2 focus-outline astro-5EUNQZKT group inline-block p-3 sm:p-1" tabindex="0" title="Search" aria-label="search">
+  
+              <svg class="astro-3EF6KSR2 scale-125 sm:scale-100" xmlns="http://www.w3.org/2000/svg"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" class="astro-3EF6KSR2"></path>
+              </svg>
+            
+</a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="max-w-3xl mx-auto px-4">
+  <hr aria-hidden="true" class="border-skin-line">
+</div>
+</header>
+  <div class="astro-VJ4TPSPI flex justify-start max-w-3xl mx-auto px-2 w-full">
+    <button class="astro-VJ4TPSPI flex focus-outline hover:opacity-75 mb-2 mt-8" onclick="history.back()">
+      <svg class="astro-VJ4TPSPI" xmlns="http://www.w3.org/2000/svg"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-VJ4TPSPI"></path>
+      </svg><span class="astro-VJ4TPSPI">Go back</span>
+    </button>
+  </div>
+  <main class="astro-VJ4TPSPI" id="main-content">
+    <h1 class="astro-VJ4TPSPI post-title">Documenting database schemas</h1>
+    <div class="astro-VJ4TPSPI flex items-center my-2 opacity-80 space-x-2"><svg class="inline-block fill-skin-base h-6 scale-100 w-6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-base">October 5, 2023<span aria-hidden="true"> | </span><span class="sr-only">&nbsp;at&nbsp;</span>10:33 PM</span></div>
+    <article class="astro-VJ4TPSPI max-w-3xl mx-auto mt-8 prose" id="article" role="article">
+      <p>Database documentation ensures your data remains accessible, understandable, and secure. This article will delve into the critical aspects of documenting database objects, explore practical ways to describe a database schema and discuss various approaches to writing adequate schema documentation.</p>
+<h2 id="table-of-contents">Table of contents</h2>
+<p></p><details><summary>Open Table of contents</summary><p></p>
+<ul>
+<li>
+<p><a href="#understanding-databases-and-schemas">Understanding databases and schemas</a></p>
+</li>
+<li>
+<p><a href="#key-aspects-of-database-documentation">Key Aspects of database documentation</a></p>
+<ul>
+<li><a href="#1-comments-and-descriptions">1. Comments and descriptions</a></li>
+<li><a href="#2-data-dictionary-tables">2. Data dictionary tables</a></li>
+<li><a href="#3-naming-conventions">3. Naming conventions</a></li>
+<li><a href="#4-data-flow-diagrams">4. Data flow diagrams</a></li>
+<li><a href="#5-entity-relationship-diagrams-erds">5. Entity-relationship diagrams (ERDs)</a></li>
+<li><a href="#6-user-guides">6. User guides</a></li>
+<li><a href="#7-data-dictionary-views">7. Data dictionary views</a></li>
+<li><a href="#8-change-logs">8. Change logs</a></li>
+<li><a href="#9-access-control-and-security-guidelines">9. Access control and security guidelines</a></li>
+<li><a href="#10-sample-queries-and-use-cases">10. Sample Queries and use cases</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#effectively-describing-a-database-schema">Effectively describing a database schema</a></p>
+<ul>
+<li><a href="#example-device-management-schema">Example: Device management schema</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#ways-to-document-schemas">Ways to Document Schemas</a></p>
+<ul>
+<li><a href="#option-1-annotate-within-the-database">Option 1: Annotate within the database</a></li>
+<li><a href="#option-2-store-metadata-separately">Option 2: Store metadata separately</a></li>
+<li><a href="#option-3-document-externally">Option 3: Document externally</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#extra-credit-view-documentation-using-schemacrawler">Extra Credit: View documentation using SchemaCrawler</a></p>
+</li>
+<li>
+<p><a href="#wrapping-up">Wrapping up</a></p>
+</li>
+</ul>
+<p></p></details><p></p>
+<h2 id="understanding-databases-and-schemas">Understanding databases and schemas</h2>
+<p>Before we dive into the details, let’s clarify some fundamental concepts:</p>
+<ul>
+<li><strong>Database</strong>: It serves as a data repository, acting as a container for information.</li>
+<li><strong>Database schema</strong>: The logical blueprint within the database that defines how data is organized and structured.</li>
+</ul>
+<p>Tables are the primary database objects that store data in a tabular format. Each row in a table represents a single record or entity, while each column denotes an attribute or field of that record. In any given database, multiple schemas can provide different organizational methods for its components.</p>
+<h2 id="key-aspects-of-database-documentation">Key Aspects of database documentation</h2>
+<p>Adequate documentation is the cornerstone of a well-managed database. Here are vital aspects to consider:</p>
+<h3 id="1-comments-and-descriptions">1. Comments and descriptions</h3>
+<p>Most modern relational database management systems (RDBMS) allow you to add comments or descriptions to various database objects, providing context, explanations, and usage notes.</p>
+<h3 id="2-data-dictionary-tables">2. Data dictionary tables</h3>
+<p>Some databases have dedicated tables or schemas where metadata and documentation about the database’s structure are stored, including metadata for tables, columns, indexes, constraints, and more information.</p>
+<h3 id="3-naming-conventions">3. Naming conventions</h3>
+<p>Clearly defined naming conventions for database objects ensure consistency, meaning, and understanding among users.</p>
+<h3 id="4-data-flow-diagrams">4. Data flow diagrams</h3>
+<p>For complex databases, data flow diagrams visually represent how data moves within the system, showing relationships between tables, views, and procedures.</p>
+<h3 id="5-entity-relationship-diagrams-erds">5. Entity-relationship diagrams (ERDs)</h3>
+<p>ERDs provide graphical representations of the database schema, helping users visualize the structure and relationships between entities.</p>
+<h3 id="6-user-guides">6. User guides</h3>
+<p>Detailed user guides or manuals instruct users on interacting with the database, executing queries, and utilizing stored procedures or views.</p>
+<h3 id="7-data-dictionary-views">7. Data dictionary views</h3>
+<p>System views or catalog tables in some databases offer valuable metadata about database objects to include in the documentation.</p>
+<h3 id="8-change-logs">8. Change logs</h3>
+<p>Maintaining change logs or version histories informs users about the database’s evolution, documenting modifications and updates.</p>
+<h3 id="9-access-control-and-security-guidelines">9. Access control and security guidelines</h3>
+<p>Incorporating information about user roles, permissions, and security guidelines ensures the secure and controlled use of the database.</p>
+<h3 id="10-sample-queries-and-use-cases">10. Sample Queries and use cases</h3>
+<p>Providing sample SQL queries and use cases illustrates practical data retrieval and manipulation.</p>
+<h2 id="effectively-describing-a-database-schema">Effectively describing a database schema</h2>
+<p>Let’s explore adequate database schema documentation through an example:</p>
+<h3 id="example-device-management-schema">Example: Device management schema</h3>
+<p>Here’s an example of external database schema documentation. This documentation effectively conveys vital points such as data meaning, relationships, business processes, user roles, usage, constraints, example values, data source, data evolution, and significant views.</p>
+<script src="https://gist.github.com/mawentowski/6bafd0ec899ebcb35aedc99bb0c8725b.js"></script>
+<p>The following key points make this schema documentation effective:</p>
+<ul>
+<li>
+<p><strong>Data meaning</strong>: This schema manages data related to both ultrasound procedures and the operational events of medical devices, with a particular emphasis on ultrasound machines.</p>
+</li>
+<li>
+<p><strong>Relationships</strong>: This table establishes relationships with other tables, including the <code>ultrasound_procedures</code> table and potentially the <code>medical_devices</code> table. These relationships allow for correlations between ultrasound procedures and device events.</p>
+</li>
+<li>
+<p><strong>Business process</strong>: The data directly relates to the healthcare facility’s core operations, encompassing medical procedures and device management.</p>
+</li>
+<li>
+<p><strong>User roles</strong>: The schema is relevant to medical personnel, maintenance teams, and administrative staff responsible for maintaining device health and managing procedure records.</p>
+</li>
+<li>
+<p><strong>Data usage</strong>: The data serves multiple purposes, including procedure documentation, device maintenance, troubleshooting, and performance monitoring.</p>
+</li>
+<li>
+<p><strong>Constraints and validation</strong>: Constraints are applied to ensure data integrity and maintain referential integrity for table relationships.</p>
+</li>
+<li>
+<p><strong>Example values</strong>: Sample data values for <code>event_id</code>, <code>device_id</code>, <code>event_timestamp</code>, <code>event_type</code>, and <code>event_details</code> could be added to illustrate typical event log entries and their relevance.</p>
+</li>
+<li>
+<p><strong>Data source</strong>: The data source includes ultrasound procedures conducted within the medical facility and event logs generated by medical devices.</p>
+</li>
+<li>
+<p><strong>Data evolution</strong>: Over time, the schema accumulates records of ultrasound procedures and device events, providing historical insights into healthcare procedures and device performance.</p>
+</li>
+<li>
+<p><strong>Views</strong>: Views such as <code>view_name_1</code> and <code>view_name_2</code> simplify data analysis and correlation between ultrasound procedures and device performance metrics, enhancing troubleshooting and maintenance efforts.</p>
+</li>
+</ul>
+<h2 id="ways-to-document-schemas">Ways to Document Schemas</h2>
+<p>Now, let’s discuss how to document database schemas effectively:</p>
+<h3 id="option-1-annotate-within-the-database">Option 1: Annotate within the database</h3>
+<p>You can add comments or descriptions directly to database objects using SQL commands. This approach is suitable when only database designers or developers contribute to documentation.</p>
+<p>For example, in PostgreSQL, you can add comments using the COMMENT command:</p>
+<pre class="astro-code one-dark-pro" is:raw="" style="white-space:pre-wrap;word-wrap:break-word;background-color:#282c34;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#c678dd">COMMENT ON SCHEMA public IS </span><span style="color:#98c379">'Main schema for application'</span><span style="color:#abb2bf">;</span></span>
+<span class="line"><span style="color:#c678dd">COMMENT ON TABLE customers IS </span><span style="color:#98c379">'Stores customer information'</span><span style="color:#abb2bf">;</span></span>
+<span class="line"><span style="color:#c678dd">COMMENT ON COLUMN customers.customer_id IS </span><span style="color:#98c379">'Unique identifier for customers'</span><span style="color:#abb2bf">;</span></span></code></pre>
+<h3 id="option-2-store-metadata-separately">Option 2: Store metadata separately</h3>
+<p>Create tables within the database to store metadata and documentation about schemas, tables, and columns, allowing technical writers to maintain documentation independently.</p>
+<p>Here’s a simplified example in PostgreSQL:</p>
+<pre class="astro-code one-dark-pro" is:raw="" style="white-space:pre-wrap;word-wrap:break-word;background-color:#282c34;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#c678dd">CREATE</span><span style="color:#abb2bf"> </span><span style="color:#c678dd">TABLE</span><span style="color:#abb2bf"> </span><span style="color:#61afef">metadata</span><span style="color:#abb2bf"> (</span></span>
+<span class="line"><span style="color:#abb2bf">    table_name </span><span style="color:#c678dd">VARCHAR</span><span style="color:#abb2bf">(</span><span style="color:#d19a66">255</span><span style="color:#abb2bf">),</span></span>
+<span class="line"><span style="color:#abb2bf">    column_name </span><span style="color:#c678dd">VARCHAR</span><span style="color:#abb2bf">(</span><span style="color:#d19a66">255</span><span style="color:#abb2bf">),</span></span>
+<span class="line"><span style="color:#abb2bf">    </span><span style="color:#c678dd">description</span><span style="color:#abb2bf"> </span><span style="color:#c678dd">TEXT</span></span>
+<span class="line"><span style="color:#abb2bf">);</span></span>
+<span class="line"></span></code></pre>
+<h3 id="option-3-document-externally">Option 3: Document externally</h3>
+<p>This method involves maintaining documentation outside the database, often in structured formats. While it provides flexibility, it can lead to inconsistencies if not synchronized with schema changes.</p>
+<p>Here are the critical steps for external documentation:</p>
+<ol>
+<li>
+<p><strong>Choose a documentation format</strong>: Select a format that suits your team’s needs, such as plain text, Markdown, PDF, HTML, or specialized documentation tools.</p>
+</li>
+<li>
+<p><strong>Structure the documentation</strong>: Organize content logically, covering schema overview, tables, views, procedures, relationships, data dictionary, usage, security, and change history.</p>
+</li>
+<li>
+<p><strong>Describe schema objects</strong>: Provide comprehensive descriptions for each object, including purpose, columns, relationships, usage, constraints, and examples.</p>
+</li>
+<li>
+<p><strong>Highlight key points</strong>: Include a section summarizing critical aspects like data meaning, user roles, data source, and views.</p>
+</li>
+<li>
+<p><strong>Include visuals (optional)</strong>: Visual representations like entity-relationship diagrams can enhance understanding.</p>
+</li>
+</ol>
+<h2 id="extra-credit-view-documentation-using-schemacrawler">Extra Credit: View documentation using SchemaCrawler</h2>
+<p>If you choose to document database objects within the database, tools like SchemaCrawler can help retrieve metadata and generate documentation.</p>
+<p>To learn more about SchemaCrawler’s capabilities as a database schema discovery tool, check out their website (<a href="https://www.schemacrawler.com/">https://www.schemacrawler.com/</a>) as well as their excellent interactive tutorials on Killacoda at (<a href="https://killercoda.com/schemacrawler">https://killercoda.com/schemacrawler</a>).</p>
+<h2 id="wrapping-up">Wrapping up</h2>
+<p>In conclusion, adequate database documentation ensures clarity, efficiency, and security. Whether you annotate within the database, store metadata separately, or document externally, the goal is to empower your team with the knowledge needed to manage and utilize the database effectively.</p>
+<p>Start documenting today to guide your database journey and make it a valuable asset for your organization.</p>
+    </article>
+
+    <ul class="astro-VJ4TPSPI tags-container">
+      <li class="inline-block astro-BLWJYJPT my-1 underline-offset-4">
+  <a href="/blog/tags/database.html" class="astro-BLWJYJPT group pr-2 text-sm">
+    <svg class="astro-BLWJYJPT scale-75" xmlns="http://www.w3.org/2000/svg"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
+    </svg>
+    &nbsp;<span class="astro-BLWJYJPT">database</span>
+  </a>
+</li>
+    </ul>
+  </main>
+  <footer class="astro-SZ7XMLTE mt-auto">
+  <div class="max-w-3xl mx-auto px-0">
+  <hr aria-hidden="true" class="border-skin-line">
+</div>
+  <div class="astro-SZ7XMLTE footer-wrapper">
+    <div class="astro-UPU6FZXR flex social-icons">
+  <a href="https://github.com/mawentowski" class="inline-block astro-5EUNQZKT group astro-UPU6FZXR link-button" tabindex="0" title=" Docs Geek Blog on Github">
+  
+        <svg class="icon-tabler" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+    <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+  </svg>
+      
+</a><a href="https://www.linkedin.com/in/markwentowski/" class="inline-block astro-5EUNQZKT group astro-UPU6FZXR link-button" tabindex="0" title="Docs Geek Blog on LinkedIn">
+  
+        <svg class="icon-tabler" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+    <rect height="16" rx="2" width="16" x="4" y="4"></rect>
+    <line x1="8" x2="8" y1="11" y2="16"></line>
+    <line x1="8" x2="8" y1="8" y2="8.01"></line>
+    <line x1="12" x2="12" y1="16" y2="11"></line>
+    <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+  </svg>
+      
+</a><a href="https://twitter.com/DocsGeek" class="inline-block astro-5EUNQZKT group astro-UPU6FZXR link-button" tabindex="0" title="Docs Geek Blog on Twitter">
+  
+        <svg class="icon-tabler" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+      <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path>
+    </svg>
+      
+</a>
+</div>
+    <div class="astro-SZ7XMLTE copyright-wrapper">
+      <span class="astro-SZ7XMLTE">Copyright © 2023</span>
+      <span class="astro-SZ7XMLTE separator">&nbsp;|&nbsp;</span>
+      <span class="astro-SZ7XMLTE">All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  </body></html>
