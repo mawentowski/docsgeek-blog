@@ -6,7 +6,7 @@ export const SITE: Site = {
   desc: "Blog about modern technical writing topics, such as docs-as-code, documentation automation, API documentation, and technical writing standards and best practices.",
   title: "Docs Geek Blog",
   ogImage: "apitechwriting_og.png",
-  lightAndDarkMode: false,
+  lightAndDarkMode: true,
   postPerPage: 3,
 };
 

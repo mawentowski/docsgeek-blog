@@ -1,4 +1,4 @@
-const primaryColorScheme = ""; // "light" | "dark"
+const primaryColorScheme = "light"; // "light" | "dark"
 
 // Get theme data from local storage
 const currentTheme = localStorage.getItem("theme");
@@ -11,7 +11,7 @@ function getPreferTheme() {
   if (primaryColorScheme) return primaryColorScheme;
 
   // return user device's prefer color scheme
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
+  return window.matchMedia("(prefers-color-scheme: light)").matches
     ? "dark"
     : "light";
 }

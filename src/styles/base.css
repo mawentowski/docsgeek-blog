@@ -37,18 +37,52 @@
     --color-border: 203, 221, 234;
   }
 
-  /* code sample background: #002A42  0, 42, 66*/
-  /* 238, 248, 254 */
-  /*  223, 241, 254 */
+  html[data-theme="dark"] .top-nav-wrap a img[src="/assets/logo-light.svg"],
+  html[data-theme="dark"]
+    .top-nav-wrap
+    a
+    img[src="/blog/assets/logo-light.svg.svg"] {
+    display: none;
+  }
+
+  html[data-theme="light"] .top-nav-wrap a img[src="/assets/logo-light.svg"],
+  html[data-theme="light"]
+    .top-nav-wrap
+    a
+    img[src="/blog/assets/logo-light.svg.svg"] {
+    display: block;
+  }
+
+  html[data-theme="dark"] .top-nav-wrap a img[src="/assets/logo-dark.svg"],
+  html[data-theme="dark"]
+    .top-nav-wrap
+    a
+    img[src="/blog/assets/logo-dark.svg.svg"] {
+    display: block;
+  }
+  html[data-theme="light"] .top-nav-wrap a img[src="/assets/logo-dark.svg"],
+  html[data-theme="light"]
+    .top-nav-wrap
+    a
+    img[src="/blog/assets/logo-dark.svg.svg"] {
+    display: none;
+  }
 
   html[data-theme="dark"] {
-    --color-fill: 33, 39, 55;
-    --color-text-base: 234, 237, 243;
-    --color-accent: 71, 96, 204;
-    --color-card: 52, 63, 96;
-    --color-card-muted: 138, 51, 2;
-    --color-border: 171, 75, 8;
+    /* background */
+    --color-fill: 3, 26, 41;
+    /* para text / heading */
+    --color-text-base: 220, 220, 220;
+    /* links */
+    --color-accent: 187, 200, 238;
+    /* inline code */
+    --color-card: 0, 42, 66;
+    /* selected scroll bar */
+    --color-card-muted: 187, 200, 238;
+    /* border, and unselected scrollbar */
+    --color-border: 0, 60, 91;
   }
+
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
     display: none;
@@ -57,6 +91,20 @@
   html[data-theme="dark"] #sun-svg {
     display: block;
   }
+
+  /* html[data-theme="dark"] .gist .gist-file .gist-data article.markdown-body {
+    background-color: RGB(220, 220, 220) !important;
+    color: black;
+  } */
+
+  html[data-theme="dark"] .gist .gist-file .gist-data article.markdown-body * {
+    color: #003c5a !important;
+  }
+
+  html[data-theme="dark"] .gist-file .gist-data div {
+    background-color: RGB(187, 200, 238) !important;
+  }
+
   body {
     @apply flex min-h-screen flex-col bg-skin-fill text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
@@ -162,3 +210,10 @@
     @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
   }
 }
+
+.logo:where(.astro-3EF6KSR2) {
+  position: static !important;
+}
+
+/* .top-nav-wrap a img {
+} */
