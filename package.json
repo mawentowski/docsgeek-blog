@@ -6,6 +6,7 @@
     "dev": "astro check --watch & astro dev",
     "start": "astro dev",
     "build": "astro build && jampack ./dist",
+    "postbuild": "node performRegexDist.js",
     "replace": "node performRegexDist.js",
     "build-and-replace": "npm run build && npm run replace",
     "preview": "astro preview",
