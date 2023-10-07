@@ -4,23 +4,26 @@ const path = require('path');
 // Define the regex pattern for matching href attributes that don't end with .css.
 const regexReplacements = [
   // ensure that all hrefs start with a '/blog'
-  { pattern: /href="\/([^"]+)"/g, replacement: 'href="/blog/$1"' },
+  // { pattern: /href="\/([^"]+)"/g, replacement: 'href="/blog/$1"' },
   // get rid of repeats: /blog/blog/
-  { pattern: /href="\/blog\/blog\//g, replacement: 'href="/blog/' },
+  // { pattern: /href="\/blog\/blog\//g, replacement: 'href="/blog/' },
   // add .html to pages
-  { pattern: /href="\/blog\/([^"]+)"/g, replacement: 'href="/blog/$1.html"' },
+  // { pattern: /href="\/blog\/([^"]+)"/g, replacement: 'href="/blog/$1.html"' },
   // remove instances where '.html' was added to '.css' files
-  { pattern: /.css.html/g, replacement: '.css' },
+  // { pattern: /.css.html/g, replacement: '.css' },
 // remove instances where '.html' was added to '.svg' files
-  { pattern: /.svg.html/g, replacement: '.svg' },
+  // { pattern: /.svg.html/g, replacement: '.svg' },
   // remove instances where '.html' was added to '.xml' files
-  { pattern: /.xml.html/g, replacement: '.xml' },
+  // { pattern: /.xml.html/g, replacement: '.xml' },
+    // Add .html to post routes on the search page
+  // { pattern: /href:`\/blog\/posts\/\${Du\(u.data\)}/g, replacement: 'href:`/blog/posts/$${Du(u.data)}.html' },
+  // Add .html to post routes on the search page
+  // { pattern: /href:`\/blog\/posts\/\${Du\(u.data\)}/g, replacement: 'href:`/blog/posts/$${Du(u.data)}.html' },
   // Ensure that all srcs start with '/blog
   { pattern: /src="\/([^"]+)"/g, replacement: 'src="/blog/$1"' },
   // get rid repeats: /blog/blog/
   { pattern: /src="\/blog\/blog\//g, replacement: 'src="/blog/' },
-  // Add .html to post routes on the search page
-  { pattern: /href:`\/blog\/posts\/\${Du\(u.data\)}/g, replacement: 'href:`/blog/posts/$${Du(u.data)}.html' }
+
 ];
 
 // Function to perform regex replacements in a given file.
