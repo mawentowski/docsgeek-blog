@@ -6,8 +6,7 @@ postSlug: essential-api-tech-writer-skills
 featured: true
 draft: false
 tags:
-  - docs-as-code
-  - apidocumentation
+  - gigs
 ogImage: "apitechwriting_og.png"
 description: Many transitioning technical writers wonder if coding is necessary for API tech writing. While the extent of coding knowledge varies by role, this article explores essential skills, from API fundamentals to technical proficiency and tools.
 ---
