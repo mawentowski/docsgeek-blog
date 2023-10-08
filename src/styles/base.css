@@ -83,6 +83,10 @@
     --color-border: 0, 60, 91;
   }
 
+  h4 {
+    font-size: 18px !important;
+  }
+
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
     display: none;
