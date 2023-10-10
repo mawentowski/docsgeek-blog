@@ -11,7 +11,7 @@ ogImage: "apitechwriting_og.png"
 description: Many transitioning technical writers wonder if coding is necessary for API tech writing. While the extent of coding knowledge varies by role, this article explores essential skills, from API fundamentals to technical proficiency and tools.
 ---
 
-One common question for technical writers transitioning from UI writing to API documentation is, do I need to be a coder to land an API tech writing job? In general, API technical writing depends on a higher level of technical proficiency on the writer's part than writing for user interfaces. While the degree of programming knowledge depends on the role, skills and tools common across gigs can guide what you need to learn to succeed at API tech writing.
+One common question for technical writers transitioning from UI writing to API documentation is, do I need to be a coder to land an API tech writing job? In general, API technical writing demands a higher level of technical proficiency on the writer's part than writing for user interfaces. While the degree of programming knowledge depends on the role, skills and tools common across gigs can guide what you need to learn to succeed at API tech writing.
 
 In this article, we delve into the distinct categories of API technical writing roles requiring different coding proficiency levels.
 
@@ -37,7 +37,7 @@ Do you need to be as skilled as a developer? Absolutely not. API technical writi
 
 Stick around because now we will look into some essential skills you'll need to succeed.
 
-## Essential skills for API tech writers\*\*
+## Essential skills for API tech writers
 
 ### Grasp API fundamentals
 
@@ -50,6 +50,8 @@ Familiarize yourself with HTTP methods (GET, POST, PUT, DELETE) and HTTP status 
 #### Learn about authentication and authorization
 
 Knowing how authentication and authorization mechanisms work, such as OAuth, API keys, and tokens, is crucial for writing the Getting Started sections to guide developers through retrieving an API key, using the API key to authenticate requests, and making their first API call.
+
+**Tip:** 💡 Follow a API quickstart guide, like the [GitHub API Quickstart](https://docs.github.com/en/rest?apiVersion=2022-11-28), which focuses on authenticating using the GitHub CLI (GitHub account required).
 
 #### Be fluent in the Open API spec
 
