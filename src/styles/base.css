@@ -24,17 +24,17 @@
 
   html[data-theme="light"] {
     /* background */
-    --color-fill: 251, 254, 251;
+    --color-fill: 251, 254, 251; /* #FBFEFB */
     /* para text / heading */
-    --color-text-base: 0, 60, 91;
+    --color-text-base: 0, 60, 91; /* #003C5B */
     /* links */
-    --color-accent: 71, 96, 204;
+    --color-accent: 71, 96, 204; /* #4760CC */
     /* inline code */
-    --color-card: 223, 241, 254;
+    --color-card: 223, 241, 254; /* #DFF1FE */
     /* selected scroll bar */
-    --color-card-muted: 203, 221, 234;
+    --color-card-muted: 203, 221, 234; /* #CBDDEA */
     /* border, and unselected scrollbar */
-    --color-border: 203, 221, 234;
+    --color-border: 203, 221, 234; /* #CBDDEA */
   }
 
   html[data-theme="dark"] .top-nav-wrap a img[src="/assets/logo-light.svg"],
@@ -70,17 +70,17 @@
 
   html[data-theme="dark"] {
     /* background */
-    --color-fill: 3, 26, 41;
+    --color-fill: 3, 26, 41; /* #031A29 */
     /* para text / heading */
-    --color-text-base: 220, 220, 220;
+    --color-text-base: 220, 220, 220; /* #DCDCDC */
     /* links */
-    --color-accent: 187, 200, 238;
+    --color-accent: 187, 200, 238; /* #BBC8EE */
     /* inline code */
-    --color-card: 0, 42, 66;
+    --color-card: 0, 42, 66; /* #002A42 */
     /* selected scroll bar */
-    --color-card-muted: 187, 200, 238;
+    --color-card-muted: 187, 200, 238; /* #BBC8EE */
     /* border, and unselected scrollbar */
-    --color-border: 0, 60, 91;
+    --color-border: 0, 60, 91; /* #003C5B */
   }
 
   h4 {
