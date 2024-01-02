@@ -64,5 +64,11 @@
     "*.{js,jsx,ts,tsx,md,mdx,json}": [
       "prettier --plugin-search-dir=. --write"
     ]
-  }
+  },
+  "distPath": "out",
+  "engines": {
+    "node": "16"
+  },
+  "releasePath": "blog",
+  "spa": "false"
 }
