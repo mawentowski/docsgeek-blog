@@ -65,7 +65,7 @@
       "prettier --plugin-search-dir=. --write"
     ]
   },
-  "distPath": "out",
+  "distPath": "dist",
   "engines": {
     "node": "16"
   },
